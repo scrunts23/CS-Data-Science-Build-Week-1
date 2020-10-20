@@ -5,6 +5,7 @@ Test script to validate my dbscan produces similiar results as scikit-learn
 from sklearn.datasets import make_blobs
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
+
 from dbscan import dbscan 
 
 # Create three gaussian blobs to use as our clustering data.
@@ -42,8 +43,7 @@ for i in range(0, len(skl_labels)):
 
 num_disagree = 0
 
-# Go through each label and make sure they match (print the labels if they 
-# don't)
+# Go through each label and make sure they match (print the labels if they do not)
 for i in range(0, len(skl_labels)):
     if not skl_labels[i] == my_labels[i]:
         print('Scikit learn:', skl_labels[i], 'mine:', my_labels[i])

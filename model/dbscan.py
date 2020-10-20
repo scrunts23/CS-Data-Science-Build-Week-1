@@ -51,13 +51,13 @@ def dbscan(D, eps, MinPts):
         # seed for a new cluster.    
         else: 
            C += 1
-           growCluster(D, labels, P, NeighborPts, C, eps, MinPts)
+           grow_cluster(D, labels, P, NeighborPts, C, eps, MinPts)
     
     # All data has been clustered!
     return labels
 
 
-def growCluster(D, labels, P, NeighborPts, C, eps, MinPts):
+def grow_cluster(D, labels, P, NeighborPts, C, eps, MinPts):
     '''
     Grow a new cluster with label `C` from the seed point `P`.
     
